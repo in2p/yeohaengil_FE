@@ -6,21 +6,17 @@ import SettingBox from '../../atoms/SettingBtnBox/SettingBox.jsx';
 const Wrapper = styled.div`
   text-align: center;
   margin-top: 100px;
-`;
-
-const Logout = styled.div`
-  position: relative;
-  color: #fe4c40;
   font-size: 12px;
   font-weight: 400;
   line-height: normal;
+`;
+
+const Logout = styled.div`
+  color: #fe4c40;
 `;
 
 const Delete = styled.div`
   color: #626262;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: normal;
   margin-top: 20px;
 `;
 

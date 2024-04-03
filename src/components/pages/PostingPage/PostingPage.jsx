@@ -44,7 +44,7 @@ const AddPhoto = styled.div`
 
 function WritePage() {
   const [photoOpen, setPhotoOpen] = useState(false);
-  const [postData, setPostData] = useState({});
+  const [postData, setPostData] = useState({}); // 서버에 보낼 data
   const navigate = useNavigate();
 
   const handleClosePhoto = () => {
@@ -83,12 +83,17 @@ function WritePage() {
 
   // 서버와 통신할 다음으로 버튼
   const handlePostPlaces = async () => {
-    console.log(JSON.stringify(postData));
+    console.log(postData);
     await axios({
       method: 'post',
-      url: 'http://115.85.181.47:8080/api/board/save',
+      url: 'http://172.30.1.71:8080/api/board/save',
       withCredentials: false,
-      data: { postData },
+      data: postData,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization:
+          'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzExNTMyNDEyfQ.G3_sd3_iKsxS4OP2lV9Pei9LOnUtGiGZSourpWAWgO3nvOozfBDBJOxfCOajqPe1N7eUMlwYeHG4fHKLrz3hsA',
+      },
     })
       .then(res => {
         console.log(res.data);
@@ -108,7 +113,7 @@ function WritePage() {
       />
       <div>
         <Button
-          style={{ background: '#595251', color: 'white' }}
+          style={{ background: '#fe4c40', color: 'white' }}
           onClick={handlePostPlaces}
         >
           <p style={{ margin: '0px' }}>다음으로 ⮕</p>

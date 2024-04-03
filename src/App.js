@@ -9,7 +9,7 @@ import Footer from './components/organisms/Footer/Footer.jsx';
 
 import SearchPage from './components/pages/SearchPage/SearchPage.jsx';
 import Main from './components/pages/MainPage/Main.js';
-import WritePage from './components/pages/WriterPage/WritePage.jsx';
+import PostingPage from './components/pages/PostingPage/PostingPage.jsx';
 import MessageListPage from './components/pages/MessageListPage/MessageListPage.jsx';
 import MyPage from './components/pages/MyPage/MyPage.jsx';
 import MapPage from './components/pages/MapPage/MapPage.jsx';
@@ -20,8 +20,9 @@ import SettingPrev from './components/pages/SettingPage/SettingPrev.jsx';
 import LoginLoadingPage from './components/pages/Login/LoginLoadingPage.jsx';
 
 import useToken from './hooks/useToken.js';
-import PhotoPage from './components/pages/WriterPage/PhotoPage.jsx';
+import PhotoPage from './components/pages/PostingPage/PhotoPage.jsx';
 import SettingModifyPage from './components/pages/SettingPage/SettingModifyPage.jsx';
+import PostPage from './components/pages/PostPage/PostPage.jsx';
 // in app.js
 axios.defaults.withCredentials = true;
 let vh = window.innerHeight * 0.01;
@@ -61,7 +62,7 @@ function App() {
         <div className="fullContainer">
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/posting" element={<WritePage />} />
+            <Route path="/posting" element={<PostingPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/messages" element={<MessageListPage />} />
             <Route path="/mypage" element={<MyPage />} />
@@ -74,6 +75,7 @@ function App() {
             <Route path="/modifyProfile" element={<SettingModifyPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/postingphoto" element={<PhotoPage />} />
+            <Route path="/post" element={<PostPage />} />
             <Route
               path="/login/oauth2/*"
               // element={<LoginLoadingPage setToken={saveToken} />}

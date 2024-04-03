@@ -85,7 +85,7 @@ function WriteDestination({ onApply, setCity, setDate, addPlaceInfo }) {
     const Cyear = date.getFullYear().toString().padStart(4, '0');
     const Cmonth = (date.getMonth() + 1).toString().padStart(2, '0');
     const Cday = date.getDate().toString().padStart(2, '0');
-    return `${Cyear}/${Cmonth}/${Cday}`;
+    return `${Cyear}-${Cmonth}-${Cday}`;
   };
 
   // 달력 범위 선택
@@ -134,7 +134,7 @@ function WriteDestination({ onApply, setCity, setDate, addPlaceInfo }) {
         )}
         <WrtieText>
           {selectedDateRange !== null && selectedDateRange.length === 2
-            ? `${formatDateString(selectedDateRange[0])} - ${formatDateString(
+            ? `${formatDateString(selectedDateRange[0])} ~ ${formatDateString(
                 selectedDateRange[1],
               )}`
             : '날짜'}

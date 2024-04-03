@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import '../../../styles/globals.css';
-
-import { IoIosArrowDown } from 'react-icons/io';
 import { CiSettings } from 'react-icons/ci';
 
+import { useNavigate } from 'react-router-dom';
 import CircleBox from '../../atoms/CircleBox/CircleBox.jsx';
 import RectButton from '../../atoms/RectButton/RectButton.jsx';
 import MyInfoModule from '../../molecules/MyInfoModule/MyInfoModule.jsx';
@@ -32,6 +31,12 @@ const ProfileRightView = styled.div`
 `;
 
 function MyProfileModule() {
+  const navigate = useNavigate();
+
+  const navigateSetting = () => {
+    navigate('/setting');
+  };
+
   return (
     <ProfileWrapper>
       <ProfileLeftView>
@@ -45,7 +50,7 @@ function MyProfileModule() {
           <MyInfoModule title="팔로잉" number="903" />
         </div>
         <div className="d-flex flex-center mt-15">
-          <RectButton width="85px" $primary>
+          <RectButton onClick={navigateSetting} width="85px" $primary>
             프로필 편집
           </RectButton>
           <RectButton width="85px">메시지</RectButton>

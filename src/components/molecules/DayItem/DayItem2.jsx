@@ -48,7 +48,6 @@ function DayItem2({ startDate, endDate, handleSearch, addPlaceInfo }) {
           [date]: [...(prevPlaces[date] || []), placeInfo],
         }));
         addPlaceInfo(dayIndex, placeInfo); // 서버에 보낼 placeInfo
-        console.log(addPlaceInfo);
       }
     }
   };

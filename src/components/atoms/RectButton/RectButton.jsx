@@ -15,12 +15,12 @@ const RectWrapper = styled.button`
   margin: 1px;
 `;
 
-function RectButton({ children, width, $primary }) {
+function RectButton({ children, width, $primary, onClick }) {
   if (!$primary) {
     return <RectWrapper width={width}>{children}</RectWrapper>;
   }
   return (
-    <RectWrapper width={width} $primary>
+    <RectWrapper width={width} $primary onClick={onClick}>
       {children}
     </RectWrapper>
   );
